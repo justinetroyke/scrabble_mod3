@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
     <nav>
       <div class="logo sm-col-left">
         <%= link_to "ScrabbleWeb", root_url %>
