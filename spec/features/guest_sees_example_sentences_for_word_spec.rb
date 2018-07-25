@@ -13,7 +13,7 @@ describe 'enter word and receive example sentences' do
       # And I fill in a text box with "mindfulness"
       click_on 'Submit'
       # And I click "Submit"
-
+save_and_open_page
       expect(page).to have_content(header)
       # Then I should see a message that says "Examples for using 'mindfulness'"
       # expect(page).to have_content()
