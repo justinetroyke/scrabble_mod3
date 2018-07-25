@@ -7,7 +7,7 @@ describe "returns data from oxford" do
       params = {source_lang: "en", word_id: "mindfulness"}
       path = ['entries', 'sentences']
 
-      response = DictionaryService.new(path, params).format_sentence_response
+      response = DictionaryService.new(path, params).response
       expect(response).to eq(sentence)
     # end
   end
