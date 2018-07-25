@@ -19,6 +19,8 @@ class DictionaryService
   end
 
   def format_sentence_response
-    response['results'].first['lexicalEntries'].first['sentences'].first['text']
+    regions = response['results'].first['lexicalEntries'].first['sentences']
+    entries = regions.find_all { |region| region["regions"] == ["North American"] }
+    entries.map { |entry| entry["text"] }
   end
 end

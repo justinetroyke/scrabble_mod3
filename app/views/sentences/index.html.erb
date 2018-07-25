@@ -1,7 +1,9 @@
 <body>
   <div>
     <% if @examples %>
-    <%= @examples %>
+      <% @examples.each do |sentence| %>
+        <%= sentence %>
+      <% end %>
     <% end %>
   </div>
 </body>
