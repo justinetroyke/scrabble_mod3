@@ -1,9 +1,11 @@
 <body>
   <div>
-    <% if @examples %>
-      <% @examples.each do |sentence| %>
-        <%= sentence %>
+    <div class="sentences">
+      <% if @examples %>
+        <% @examples.each do |sentence| %>
+          <li><%= sentence.sentence %></li>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </body>

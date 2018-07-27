@@ -7,8 +7,13 @@ describe "returns data from oxford" do
     params = {source_lang: "en", word_id: "mindfulness"}
     path = ['entries', 'sentences']
 
-    response = DictionaryService.new(path, params).format_sentence_response
-    expect(response.first).to eq(sentence)
-    expect(response.last).to eq(sentence2)
+    VCR.use_cassette("North American/sentences") do
+
+      response = DictionaryService.new(path, params).sentence_format
+
+      expect(response.count).to eq(34)
+      # expect(response.first).to eq(sentence)
+      # expect(response.last).to eq(sentence2)
+    end
   end
 end
